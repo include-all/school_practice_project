@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+	<link rel="icon" href="../pic/favicon.ico">
+	<title>医保数据统计分析系统</title>
+
+	<!-- Bootstrap 核心 CSS 文件 --> 
+	<link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+
+	<!-- jQuery文件。务必在bootstrap.min.js 之前引入 --> 
+	<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+
+	<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+	<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+	<link rel="stylesheet" type="text/css" href="../css/index_page.css">
+
+</head>
+  <body>
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">医保数据分析系统</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#">Dashboard</a></li>
+            <li><a href="#">Settings</a></li>
+            <li><a href="#">Profile</a></li>
+            <li><a href="#">Help</a></li>
+          </ul>
+          <form class="navbar-form navbar-right">
+            <input type="text" class="form-control" placeholder="Search...">
+          </form>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container-fluid">
+      <div class="row">
+
+        <div class="col-sm-3 col-md-2 sidebar">
+          <ul class="nav nav-sidebar">
+
+            <li id = "menu_home" class="active" data-index = "0">
+              <a href="#">
+                <span class="glyphicon glyphicon-home"></span>
+                首页管理 
+                <span class="sr-only">(current)</span>
+              </a>
+            </li>
+
+            <li id = "menu_ana">
+              <a href="#">
+                <span class="glyphicon glyphicon-th"></span>
+                统计分析
+                <span class="glyphicon glyphicon-chevron-down pull-right"></span>
+              </a>
+            </li>
+
+            <ul id = "down_menu" class="list-group change_display">
+              <li id = "menu_ana_1" class="list-group-item" data-index = "1">
+                <a href = "#">
+                  违规原因统计分析
+                </a>
+              </li>
+
+              <li id = "menu_ana_2" class="list-group-item" data-index = "2">
+                <a href = "#">
+                  医疗机构医保金额统计分析
+                </a>
+              </li>
+
+            </ul>
+
+            <li id = "menu_inf" data-index = "3">
+              <a href="#">
+                <span class="glyphicon glyphicon-th-list"></span>
+                信息发布
+              </a>
+            </li>
+
+            <li id = "menu_manage" data-index = "4">
+              <a href="#">
+                <span class="glyphicon glyphicon-cog"></span>
+                用户管理
+              </a>
+            </li>
+          </ul>
+         
+        </div>
+
+
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+          <ul class="nav nav-tabs tab_ul">
+
+            <li id = "tab_home" role="presentation" class="active">
+              <a href="#">
+                首页管理
+              </a>
+            </li>
+
+            <li id = "tab_analysis_1" role="presentation">
+              <a href="#">
+                违规原因统计分析
+                <span class="glyphicon glyphicon-remove-circle"></span>
+              </a>
+            </li>
+
+            <li id = "tab_analysis_2" role="presentation">
+              <a href="#">
+                医疗机构医保金额统计分析
+                <span class="glyphicon glyphicon-remove-circle"></span>
+              </a>
+            </li>
+
+            <li id = "tab_information" role="presentation">
+              <a href="#">
+                信息发布
+                <span class="glyphicon glyphicon-remove-circle"></span>
+              </a>
+            </li>
+
+            <li id = "tab_manage" role="presentation">
+              <a href="#">
+                用户管理
+                <span class="glyphicon glyphicon-remove-circle"></span>
+              </a>
+            </li>
+
+          </ul>
+
+          <div class="row">
+
+            <div id = "content_home" class="col-md-12">
+              home
+            </div>
+
+            <div id = "content_ana_1" class="col-md-12">"
+              ana_!
+            </div>
+
+            <div id = "content_ana_2" class="col-md-12">
+              ana_2
+            </div>
+
+            <div id = "content_inf" class="col-md-12">
+              inf
+            </div>
+
+            <div id = "content_manage" class="col-md-12">
+              man
+            </div>
+
+          </div>
+
+        </div>    <!-- main -->
+
+       
+      </div>   <!--  row -->
+    </div>     <!-- container-fluid  -->
+
+
+    <script type="text/javascript">
+
+      //左侧菜单栏统计分析的下拉菜单
+      $("#menu_ana").click(function(event){
+          /*切换折叠指示图标*/
+          $(this).find("span:last").toggleClass("glyphicon-chevron-down");
+          $(this).find("span:last").toggleClass("glyphicon-chevron-up");
+          $(this).next("#down_menu").toggleClass('change_display');
+      });
+
+
+      //顶部标签页点击切换
+      $(".main").find("li").click(function(event){
+
+        $(this).addClass("active")
+        .siblings('li').removeClass("active");
+
+        var index = $(".tab_ul li").index(this);
+
+        $(".main>.row>div").eq(index).show()
+        .siblings("div").hide();
+
+      });
+
+
+      //标签页的关闭
+      $(".main").find("span").click(function(event) {
+        var $tab_li = $(this).parent().parent("li");
+        $tab_li.hide();
+
+        if($tab_li.hasClass('active')){
+          $tab_li.removeClass("active");
+
+          var $tab_li_left = $tab_li.prev();
+          
+          //display是css样式，不能用attr()方法，只能用css()
+          while($tab_li_left.css('display') == "none"){
+            $tab_li_left = $tab_li_left.prev();
+          }
+
+          $tab_li_left.addClass('active');
+
+          var index = $(".tab_ul li").index($tab_li_left);
+
+          $(".main>.row>div").eq(index).show()
+          .siblings("div").hide();
+        }
+
+        //阻止事件冒泡很关键，不然会触发切换标签栏的点击事件
+        event.stopPropagation();
+
+      });
+
+
+      //点击左侧出现标签页
+      $(".sidebar").find('li[data-index]').click(function(event) {
+
+        var index = $(".sidebar li[data-index]").index(this);
+         
+        $(".tab_ul li").eq(index).show().addClass('active')
+        .siblings('li').removeClass('active');
+
+        $(".main>.row>div").eq(index).show()
+        .siblings("div").hide();;
+
+      });
+
+
+
+    </script>
+
+</body>
+</html>

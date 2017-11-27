@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="icon" href="../pic/favicon.ico">
+	<title>登录页面，进入我的博客</title>
+
+
+	<!-- Bootstrap 核心 CSS 文件 --> 
+	<link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+
+	<!-- jQuery文件。务必在bootstrap.min.js 之前引入 --> 
+	<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+
+	<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+	<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+	<link rel="stylesheet" type="text/css" href="../css/login_page.css">
+
+
+	
+
+
+</head>
+<body>
+	
+	<div class="container">
+
+	    <form class="form-signin">
+	        <h2 class="form-signin-heading">Please login</h2>
+
+	        <label for="inputName" class="sr-only">My name</label>
+	        <input type="text" id="inputName" class="form-control" name="name" placeholder="My name" required autofocus>
+
+	        <label for="inputPassword" class="sr-only">Password</label>
+	        <input type="password" id="inputPassword" class="form-control" name="password" placeholder="Password" required>
+
+	        <button class="btn btn-lg btn-primary btn-block">Sign in</button>
+	    </form>
+
+    </div> <!-- /container -->
+
+	
+
+    <script type="text/javascript">
+   	//暂时用js控制跳转
+
+   	$("button").click(function(event) {
+   		/* Act on the event */
+   		window.location.href = "www.baidu.com";
+   		var name = $("#inputName").val();
+   		var password = $("#inputPassword").val();
+   		if(name === "zpf" && password === "123"){
+   			window.location.href = "index.html";
+   			return false;
+   		}
+   		else{
+   			alert("name or password error!");
+   			window.location.reload();
+   		}
+   	});
+
+    </script>
+	
+</body>
+</html>
