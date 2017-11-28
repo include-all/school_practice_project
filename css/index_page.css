@@ -110,11 +110,11 @@ body {
 }
 
 /*控制标签页的初始化，只有首页显示*/
-.main .row div{
+.main #content>div{
   display: none;
 }
 
-.main .row #content_home{
+.main #content #content_home{
   display: block;
 }
 
@@ -127,5 +127,24 @@ body {
 .main #tab_home{
   display: block;
 }
+
+
+/*首页管理中自定义导航样式*/
+#content #content_home .my_nav{
+  font-size: 2em;
+  color:white;
+  height: 4em;
+  text-align: center;
+  line-height: 4em;
+  background-color: rgb(50,122,182);
+  border-radius: 5%;
+}
+
+
+#content .row{
+  margin: 15px 0;
+}
+
+
 
 

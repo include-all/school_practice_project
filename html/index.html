@@ -144,107 +144,77 @@
 
           </ul>
 
-          <div class="row">
 
-            <div id = "content_home" class="col-md-12">
-              home
+          <!-- 内容区 -->
+
+          <div id = "content">
+            <!-- 首页管理 -->
+            <div id = "content_home">
+              <div class="row">
+                <div class="col-md-3 my_nav">
+                    <span id = "add_my_nav" class="glyphicon glyphicon-plus"></span>
+                  自定义导航
+                </div>
+              </div>
+
+            </div>
+            
+            <!-- 违规原因统计分析 -->
+            <div id = "content_ana_1">"
+              违规原因统计分析
+            </div>
+            
+
+            <!-- 医疗机构医保金额统计分析 -->
+            <div id = "content_ana_2">
+              医疗机构医保金额统计分析
+            </div>
+            
+
+            <!-- 信息发布 -->
+            <div id = "content_inf">
+              信息发布
+            </div>
+            
+
+            <!-- 用户管理 -->
+            <div id = "content_manage">
+              用户管理
             </div>
 
-            <div id = "content_ana_1" class="col-md-12">"
-              ana_!
-            </div>
-
-            <div id = "content_ana_2" class="col-md-12">
-              ana_2
-            </div>
-
-            <div id = "content_inf" class="col-md-12">
-              inf
-            </div>
-
-            <div id = "content_manage" class="col-md-12">
-              man
-            </div>
-
-          </div>
+          </div>     <!-- content -->
 
         </div>    <!-- main -->
 
        
       </div>   <!--  row -->
     </div>     <!-- container-fluid  -->
+    
+
+    <!-- Model -->
+
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+          </div>
+          <div class="modal-body">
+            test
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
 
 
-    <script type="text/javascript">
-
-      //左侧菜单栏统计分析的下拉菜单
-      $("#menu_ana").click(function(event){
-          /*切换折叠指示图标*/
-          $(this).find("span:last").toggleClass("glyphicon-chevron-down");
-          $(this).find("span:last").toggleClass("glyphicon-chevron-up");
-          $(this).next("#down_menu").toggleClass('change_display');
-      });
-
-
-      //顶部标签页点击切换
-      $(".main").find("li").click(function(event){
-
-        $(this).addClass("active")
-        .siblings('li').removeClass("active");
-
-        var index = $(".tab_ul li").index(this);
-
-        $(".main>.row>div").eq(index).show()
-        .siblings("div").hide();
-
-      });
-
-
-      //标签页的关闭
-      $(".main").find("span").click(function(event) {
-        var $tab_li = $(this).parent().parent("li");
-        $tab_li.hide();
-
-        if($tab_li.hasClass('active')){
-          $tab_li.removeClass("active");
-
-          var $tab_li_left = $tab_li.prev();
-          
-          //display是css样式，不能用attr()方法，只能用css()
-          while($tab_li_left.css('display') == "none"){
-            $tab_li_left = $tab_li_left.prev();
-          }
-
-          $tab_li_left.addClass('active');
-
-          var index = $(".tab_ul li").index($tab_li_left);
-
-          $(".main>.row>div").eq(index).show()
-          .siblings("div").hide();
-        }
-
-        //阻止事件冒泡很关键，不然会触发切换标签栏的点击事件
-        event.stopPropagation();
-
-      });
-
-
-      //点击左侧出现标签页
-      $(".sidebar").find('li[data-index]').click(function(event) {
-
-        var index = $(".sidebar li[data-index]").index(this);
-         
-        $(".tab_ul li").eq(index).show().addClass('active')
-        .siblings('li').removeClass('active');
-
-        $(".main>.row>div").eq(index).show()
-        .siblings("div").hide();;
-
-      });
-
-
-
-    </script>
+    
+    <!-- 引入js文件 -->
+    <script src="../js/index.js"></script>
 
 </body>
 </html>
