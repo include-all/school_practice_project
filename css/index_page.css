@@ -136,15 +136,28 @@ body {
   height: 4em;
   text-align: center;
   line-height: 4em;
-  background-color: rgb(50,122,182);
+  background-color: rgb(92,184,92);
   border-radius: 5%;
 }
 
-
-#content .row{
+/*内容区与顶部标签栏之间的间隔*/
+#content .row{      
   margin: 15px 0;
 }
 
+
+/*模态框样式*/
+.modal-body>div{
+  font-size: 1.5em;
+  color: white;
+  text-align: center;
+  margin-bottom: 10px;
+  width: 80%;
+  height: 3em;
+  line-height: 3em;
+  background-color: rgb(50,122,182);
+  border-radius: 5%;
+}
 
 
 

@@ -12,15 +12,18 @@
 	<title>医保数据统计分析系统</title>
 
 	<!-- Bootstrap 核心 CSS 文件 --> 
-	<link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+	<link href="../lib/bootstrap-3.3.7/css/bootstrap.min.css" rel="stylesheet">
 
 	<!-- jQuery文件。务必在bootstrap.min.js 之前引入 --> 
-	<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+	<script src="../lib/jquery-3.2.1.min.js"></script>
 
 	<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
-	<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="../lib/bootstrap-3.3.7/js/bootstrap.min.js"></script>
 
 	<link rel="stylesheet" type="text/css" href="../css/index_page.css">
+
+  <!-- 信息发布样式 -->
+  <link rel="stylesheet" type="text/css" href="../css/inf.css">
 
 </head>
   <body>
@@ -160,7 +163,7 @@
             </div>
             
             <!-- 违规原因统计分析 -->
-            <div id = "content_ana_1">"
+            <div id = "content_ana_1">
               违规原因统计分析
             </div>
             
@@ -173,7 +176,48 @@
 
             <!-- 信息发布 -->
             <div id = "content_inf">
-              信息发布
+              <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+              <div class = "container">
+                <div class="page-header">
+                    <h2>信息发布平台</h2>
+                </div>
+
+                <div id = "inf_show">
+                </div>
+
+                <div class="wrap_edit">
+                    <div class="form-group">
+                        <label>标题</label>
+                        <input type="text" class="form-control" id="article_title"> 
+                    </div>
+
+                    <div class="form-group">
+                        <label">内容</label>
+                        <textarea type="email" class="form-control" id="article_content"></textarea>
+                    </div>
+                    <div id="message"></div>
+                    <button id="add" class="btn btn-default">提交</button>
+                    
+
+
+                    <!-- 编辑删除文章部分 -->
+                    <button id ="edit" class="btn btn-danger pull-right">编辑</button>
+
+
+                    <div id = "edit_content" class="delete_content">
+                        <div class="form-group">
+                          <label>输入要删除的文章标题</label>
+                          <input type="text" class="form-control" id="delete_title"> 
+                        </div>
+
+                        <!-- 提示区 -->
+                        <div id = "tips"></div>
+                        <button id = "delete" class="btn btn-danger">删除</button>
+                    </div>
+                </div>
+              </div>
+
+              <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
             </div>
             
 
@@ -198,11 +242,20 @@
         <div class="modal-content">
           <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+            <h4 class="modal-title" id="myModalLabel">添加二级菜单</h4>
           </div>
           <div class="modal-body">
-            test
+          <!-- 自定义模态框内容 -->
+            <div>
+               <p>违规原因统计分析</p> 
+            </div>
+            <div>
+               <p>医疗机构医保金额统计分析</p>
+            </div>
+
+          <!-- 下部分界线 -->
           </div>
+
           <div class="modal-footer">
             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
             <button type="button" class="btn btn-primary">Save changes</button>
@@ -213,8 +266,10 @@
 
 
     
-    <!-- 引入js文件 -->
+    <!-- 引入系统布局js文件 -->
     <script src="../js/index.js"></script>
+
+    <script src="../js/inf.js"></script>
 
 </body>
 </html>

@@ -1,0 +1,25 @@
+
+
+
+.container {
+    width: 80%;
+  }
+}
+
+.wrap_edit{
+  padding-bottom: 50px;
+}
+
+.delete_content{
+  display: none;
+}
+
+#edit_content{
+  padding-top: 50px;
+}
+
+
+/*文章空两格*/
+blockquote{
+  text-indent: 2em;
+}
