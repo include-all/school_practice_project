@@ -14,14 +14,16 @@
 
 
 
-	$result = mysqli_query($con,"SELECT * FROM article");  
+	$result = mysqli_query($con,"SELECT * FROM user");  
 
 	if($result){
 		while($row = mysqli_fetch_array($result))
 		{
-			$article[] = array("article_title"=>$row['article_title'],"article_content"=>$row['article_content']);
+			if($row['name'] !='manager'){
+				$user[] = array("name"=>$row['name'],"password"=>$row['password']);
+			}
 		}
-		echo json_encode($article);
+		echo json_encode($user);
 	}
 
 

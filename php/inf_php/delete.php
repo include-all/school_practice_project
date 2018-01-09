@@ -7,7 +7,7 @@
 
 
 	// 连接数据库
-	mysqli_select_db($con,"myblog_db");
+	mysqli_select_db($con,"my_demo");
 
 
 

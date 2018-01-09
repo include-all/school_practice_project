@@ -1,0 +1,24 @@
+#content_manage #user_inf p{
+	height: 30px;
+	line-height: 30px;
+	font-size: 20px;
+}
+
+#content_manage #user_inf p span{
+	margin-right: 20px;
+}
+
+#content_manage #user_inf p button{
+	margin-right: 20px;
+}
+
+#content_manage #user_inf p .user_confirm{
+	display: none;
+}
+
+#content_manage #user_inf p input{
+	width: 150px;
+	display: inline-block;
+	margin-right: 15px;
+}
+

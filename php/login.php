@@ -8,9 +8,9 @@
 		die('Could not connect: ' . mysql_error());
 	}
 
-	mysqli_select_db($con,"myblog_db");
+	mysqli_select_db($con,"my_demo");
 
-	$result = mysqli_query($con,"SELECT * FROM signin WHERE name = '$name'");
+	$result = mysqli_query($con,"SELECT * FROM user WHERE name = '$name'");
 
 
 	$row = mysqli_fetch_array($result);
@@ -23,12 +23,12 @@
 
 
 		echo "<script>
-			  window.location.href='../html/home.html';</script>";
+			  window.location.href='../html/index.html';</script>";
 	}
 	else{
 		echo "<script>
 			  	alert('name or password error');
-				window.location.href='../html/signIn_page.html';
+				window.location.href='../html/login.html';
 			  </script>";
 	}
 

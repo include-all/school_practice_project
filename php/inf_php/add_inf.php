@@ -7,7 +7,7 @@
 
 
 	// 连接数据库
-	mysqli_select_db($con,"myblog_db");
+	mysqli_select_db($con,"my_demo");
 
 	//在表中创建数据库
 	$sql = "CREATE TABLE article

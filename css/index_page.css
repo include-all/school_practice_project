@@ -131,13 +131,26 @@ body {
 
 /*首页管理中自定义导航样式*/
 #content #content_home .my_nav{
-  font-size: 2em;
+  font-size: 1em;
   color:white;
   height: 4em;
   text-align: center;
   line-height: 4em;
   background-color: rgb(92,184,92);
   border-radius: 5%;
+}
+
+/*首页管理中两个导航标签的样式*/
+#content #content_home .my_nav_1{
+  font-size: 1em;
+  height: 4em;
+  color: white;
+  text-align: center;
+  line-height: 4em;
+  background-color: rgb(66,139,202);
+  border-radius: 5%;
+  margin-right: 20px;
+  display: none;
 }
 
 /*内容区与顶部标签栏之间的间隔*/

@@ -29,7 +29,7 @@
 	
 	<div class="container">
 
-	    <form class="form-signin">
+	    <form class="form-signin" action="../php/login.php" method="post">
 	        <h2 class="form-signin-heading">Please login</h2>
 
 	        <label for="inputName" class="sr-only">My name</label>
@@ -48,19 +48,10 @@
     <script type="text/javascript">
    	//暂时用js控制跳转
 
-   	$("button").click(function(event) {
+   	$("#inputName").blur(function(event) {
    		/* Act on the event */
-   		window.location.href = "www.baidu.com";
-   		var name = $("#inputName").val();
-   		var password = $("#inputPassword").val();
-   		if(name === "zpf" && password === "123"){
-   			window.location.href = "index.html";
-   			return false;
-   		}
-   		else{
-   			alert("name or password error!");
-   			window.location.reload();
-   		}
+   		var name=$("#inputName").val();    
+	    localStorage.setItem("name", name); 
    	});
 
     </script>
