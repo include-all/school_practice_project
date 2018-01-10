@@ -33,9 +33,6 @@
   <link rel="stylesheet" type="text/css" href="../css/user_manage.css">
 
 
-  <!-- tableexport插件所需css -->
-  <link href="../lib/tableexport/dist/css/tableexport.min.css" rel="stylesheet">
-
 
 
 
@@ -188,6 +185,21 @@
             
             <!-- 违规原因统计分析 -->
             <div id = "content_ana_1">
+              <hr>
+              <!-- ==============图表前的选择项===================== -->
+              <div class="dropdown">
+                <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                  选择月份
+                  <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                  <li id="t201710"><a href="JavaScript:void(0)">2017年10月</a></li>
+                  <li id="t201708"><a href="JavaScript:void(0)">2017年8月</a></li>
+                </ul>
+              </div>
+
+              <hr>
+              <!-- ====================================== -->
 
               <div class="table-responsive">
                 <table id="ana_1_table" class="table table-striped table-bordered"
@@ -206,120 +218,69 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>机构1</td>
-                        <td>违规原因1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>机构2</td>
-                        <td>违规原因2</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td>机构3</td>
-                        <td>违规原因2</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                    </tr>
-                    <tr>
-                        <td>4</td>
-                        <td>机构4</td>
-                        <td>违规原因2</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                    </tr>
-                    <tr>
-                        <td>5</td>
-                        <td>机构5</td>
-                        <td>违规原因3</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                    </tr>
-                    <tr>
-                        <td>6</td>
-                        <td>机构6</td>
-                        <td>违规原因3</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                    </tr>
-                    <tr>
-                        <td>7</td>
-                        <td>机构7</td>
-                        <td>违规原因4</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                    </tr>
-                    <tr>
-                        <td>8</td>
-                        <td>机构8</td>
-                        <td>违规原因5</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                    </tr>
-                    <tr>
-                        <td>9</td>
-                        <td>机构9</td>
-                        <td>违规原因5</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                    </tr>
-                    <tbody>
+       
+                    </tbody>
                   </table>
+                  <button id="import_excel" class="btn btn-success btn-lg">导出excel</button>
                 </div>
 
-    <!-- ============================================================================================== -->
-
+                <hr>
+         <!-- ================================================================ -->
+            <button id="table_to_chart" class="btn btn-info btn-lg">生成图表</button>
+            <hr>
             <div id="ana_1_chart"></div>
-
+              
             </div>
             
 
-            <!-- 医疗机构医保金额统计分析 -->
+
+            <!-- ==============医疗机构医保金额统计分析==================================== -->
             <div id = "content_ana_2">
-              医疗机构医保金额统计分析
-            </div>
+              <hr>
+              <!-- ==============图表前的选择项===================== -->
+              <div class="dropdown">
+                <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                  选择月份
+                  <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                  <li id="t201710_2"><a href="JavaScript:void(0)">2017年10月</a></li>
+                  <li id="t201708_2"><a href="JavaScript:void(0)">2017年8月</a></li>
+                </ul>
+              </div>
+
+              <hr>
+              <!-- ====================================== -->
+
+              <div class="table-responsive">
+                <table id="ana_2_table" class="table table-striped table-bordered"
+                       data-name="cool-table">
+                    <thead>
+                    <tr>
+                        <th>机构编码</th>
+                        <th>机构名称</th>
+                        <th>门诊量</th>
+                        <th>同比</th>
+                        <th>环比</th>
+                        <th>医保总金额</th>
+                        <th>同比</th>
+                        <th>环比</th>
+                        <th>人均医保金额</th>
+                        <th>同比</th>
+                        <th>环比</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+       
+                    </tbody>
+                  </table>
+                  <button id="import_excel_2" class="btn btn-success btn-lg">导出excel</button>
+                </div>
+
+                <hr>
+              </div>    <!-- content_ana_2 -->
+    <!-- ============================================================================================== -->
+          
             
 
             <!-- 信息发布 -->
@@ -443,16 +404,19 @@
 
 
     <!-- 导出excel插件所需引入的文件 -->
-    <script src="../lib/tableexport/js/xlsx.core.min.js"></script>
-    <script src="../lib/tableexport/js/blob.js"></script>
-    <script src="../lib/tableexport/js/FileSaver.min.js"></script>
-    <script src="../lib/tableexport/dist/js/tableexport.js"></script>
+
+    <script src="../lib/jquery.table2excel.min.js"></script> 
+
 
     <!-- ============================ -->
     <!-- 引入echarts文件 -->
     <script src="../lib/echarts.js"></script> 
+
     <!-- 引入违规原因统计分析js文件 -->
     <script src="../js/ana_1.js"></script>
+
+    <!-- 引入医疗机构医保金额统计分析js文件 -->
+    <script src="../js/ana_2.js"></script>
 
     <!-- 引入信息发布标签页js文件 -->
     <script src="../js/inf.js"></script>

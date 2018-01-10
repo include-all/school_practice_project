@@ -34,7 +34,7 @@ $("#menu_ana").click(function(event){
 
 
  //顶部标签页点击切换
-$(".main").find("li").click(function(event){
+$(".main .nav-tabs").find("li").click(function(event){
 
   $(this).addClass("active")
   .siblings('li').removeClass("active");
