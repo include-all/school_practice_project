@@ -19,7 +19,8 @@
 	if($result){
 		while($row = mysqli_fetch_array($result))
 		{
-			$article[] = array("article_title"=>$row['article_title'],"article_content"=>$row['article_content']);
+			$article[] = array("article_title"=>$row['article_title'],"article_content"=>$row['article_content'],
+						 "article_name"=>$row['article_name'],"article_time"=>$row['article_time']);
 		}
 		echo json_encode($article);
 	}

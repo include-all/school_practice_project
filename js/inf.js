@@ -41,12 +41,20 @@ $(function() {
     var inf_show = $("#inf_show");  
     $.getJSON("../php/inf_php/ajax.php", function(json) {  
         $.each(json, function(index, array) {  
-            var txt = "<h3>" + array["article_title"] + "</h3><blockquote>" + array["article_content"] + "</blockquote>" ;  
+            var txt = "<h3>" + array["article_title"] + "</h3>" + "<small>" + array["article_name"]+
+                      "</small><small>" + array["article_time"] +"</small>" + "<blockquote>" + array["article_content"] + "</blockquote>" ;  
             inf_show.append(txt);  
         });  
     });  
    
 });  
+
+
+
+// 修改时间格式
+function p(s) {
+    return s < 10 ? '0' + s: s;
+}
 
 
 //添加文章
@@ -55,13 +63,30 @@ $("#add").click(function() {
    var txt = $("#article_content").val();  
    var inf_show = $("#inf_show");
 
+   // =====================================
+   var myDate = new Date();
+   //获取当前年
+   var year=myDate.getFullYear();
+   //获取当前月
+   var month=myDate.getMonth()+1;
+   //获取当前日
+   var date=myDate.getDate(); 
+   var h=myDate.getHours();       //获取当前小时数(0-23)
+   var m=myDate.getMinutes();     //获取当前分钟数(0-59)
+   var s=myDate.getSeconds();   
+   var now=year+'-'+p(month)+"-"+p(date)+" "+p(h)+':'+p(m)+":"+p(s);
+
+   var name = localStorage.getItem("name");
+
+   // =====================================
+
    $.ajax({  
        type: "POST",  
        url: "../php/inf_php/add_inf.php",  
-       data: "title=" + textareaTo(title) + "&txt=" + textareaTo(txt),  
+       data: "title=" + textareaTo(title) + "&txt=" + textareaTo(txt) + "&name=" + name + "&time=" + now,  
        success: function(msg) {  
            if (msg == 1) {  
-               var str = "<h3>" + textareaTo(title) + "</h3>"+"<blockquote>" + textareaTo(txt) + "</blockquote>";  
+               var str = "<h3>" + textareaTo(title) +"</h3>"+"<small>"+name+"</small><small>"+now+"</small>"+"<blockquote>" + textareaTo(txt) + "</blockquote>";  
                inf_show.append(str);  
                $("#message").show().html("发表成功！").fadeOut(1000);  
                $("#article_title").val(""); 
@@ -69,7 +94,7 @@ $("#add").click(function() {
 
                $("textarea").css("height", dh +'px');
            } else {  
-               $("#message").show().html(msg).fadeOut(1000); 
+               $("#message").show().html(msg).fadeOut(10111000); 
            }  
         }  
     });  
@@ -95,8 +120,10 @@ $("#delete").click(function(){
                //找到删除标题的那个元素h3，通过each()
                var $list = $("#inf_show>h3");
                $list.each(function(index, el) {
-                // alert($(el).text());
+                
                   if ($(el).text() === delete_title) {
+                    $(el).next("small").remove();
+                    $(el).next("small").remove();
                     $(el).next("blockquote").remove();
                     $(el).remove();
                   }

@@ -21,3 +21,7 @@
 blockquote{
   text-indent: 2em;
 }
+
+#inf_show small{
+	margin-left: 10px;
+}

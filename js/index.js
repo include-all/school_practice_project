@@ -7,7 +7,9 @@ $(function(){
   var name = localStorage.getItem("name");
   $("#navbar>ul>li:eq(1)>a").text(name);
   if(name != "manager"){
-    $("#content_manage").html("非管理员不得进入用户管理");
+    $("#content_manage").html("<hr><h1>非管理员不得进入用户管理</h1>");
+    // 如果不是管理员，不得删除信息
+    $("#edit").hide();
   }
 
   $("#navbar>ul>li:eq(3)>a").click(function(event) {
@@ -123,7 +125,7 @@ $(function() {
    
 });
 
-//增加和首页管理标签
+//增加首页管理标签
 $("#modal_add").click(function(event) {
   /* Act on the event */
   var name = localStorage.getItem("name"); 
@@ -158,7 +160,7 @@ $("#modal_add").click(function(event) {
 });
 
 
-//删除和首页管理标签
+//删除首页管理标签
 $("#modal_delete").click(function(event) {
   /* Act on the event */
   var name = localStorage.getItem("name"); 
